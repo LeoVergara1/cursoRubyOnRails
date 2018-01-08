@@ -52,7 +52,10 @@ class App
       when 'm'
         print "Marcar un elemento de la lista numero: "
         articulo = gets.chomp
-        @list.check_item(articulo)
+        elemento = @list.check_item(articulo)
+        40.times { print "*"}
+        puts "\n#{elemento} ha sido marcado de tu lista\n"
+        40.times { print "*"}
       when 'b'
         @list.remove_all
       when 'f'
@@ -64,6 +67,8 @@ class App
         else
           puts "El articulo no esta en la lista"
         end
+      else
+        puts "No hay operación"
       end
     end
   end
