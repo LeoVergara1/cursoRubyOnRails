@@ -10,7 +10,10 @@ puts "Cuando no se tiene una llave"
 puts "Buscando aldo"
 puts nueva.has_key?(:aldo)
 puts "Buscando francisco"
-puts nueva.has_key?(:francisco)
+puts nueva.has_key?(:francisco) #Muy util en entrevistas de ruby 
 puts "Agregando con store"
 nueva.store(:otra,9978733)
 puts nueva
+
+puts "Buscando el value de brand"
+puts nueva.has_value?(9383)
