@@ -9,6 +9,17 @@ def workshop_content(name)
 rescue Errno::ENOENT
   return nil
 end
+
+def save_workshop(name, description)
+  File.open("workshops/#{name}.txt", "w") do |file|
+    file.print(description)
+  end
+end
+
+def delete_workshop(name)
+  File.delete("workshops/#{name}.txt")
+end
+
 get '/' do
   @files = Dir.entries("workshops")
   @valor = 3
@@ -26,7 +37,16 @@ get '/create' do
 end
 
 post '/create' do
-  puts "Llego..."
-  puts params.inspect
+  @name = params[:name]
+  @description = params[:description]
+  save_workshop(@name, @description)
+  erb :new
 end
+
+delete '/:name' do
+  delete_workshop(params[:name])
+  redirect '/'
+end
+
+
 

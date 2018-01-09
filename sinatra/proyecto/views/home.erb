@@ -2,3 +2,5 @@
 <%  @files.drop(2).each do |file| %>
   <a href="workshop/<%= File.basename(file, ".*")%>"> <%= File.basename(file, ".*")%> </a><br>
 <% end %>
+<br>
+<a href="/create"> Crear un nuevo taller</a>
