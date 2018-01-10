@@ -48,5 +48,17 @@ delete '/:name' do
   redirect '/'
 end
 
+get '/edit/:name' do
+  @name = params[:name]
+  erb :edit
+end
+
+put ':name' do
+
+  redirect '/'
+end
+
+
+
 
 

@@ -3,10 +3,12 @@
 <p><%= @description %></p>
 
 
-
-<form action="/<%= @name%>" method="post">
-  <fieldset>
-    <input type="hidden" name="_method" value="delete" />
-    <input type="submit" value="Borrar">
-  </fieldset>
-</fomr>
+<div>
+  <button><a href="/edit/<%= @name%>">Editar taller</a></button><br>
+  <form action="/<%= @name%>" method="post">
+    <fieldset>
+      <input type="hidden" name="_method" value="delete" />
+      <input type="submit" value="Borrar">
+    </fieldset>
+  </form>
+</div>
