@@ -50,12 +50,14 @@ end
 
 get '/edit/:name' do
   @name = params[:name]
+  @description = workshop_content(@name)
   erb :edit
 end
 
-put ':name' do
-
-  redirect '/'
+put '/:name' do
+  puts "Hola como estas "
+  save_workshop(params[:name], params[:description])
+  redirect URI.escape("/edit/#{params[:name]}")
 end
 
 
