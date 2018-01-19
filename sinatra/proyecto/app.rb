@@ -23,7 +23,7 @@ end
 get '/' do
   @files = Dir.entries("workshops")
   @valor = 3
-  erb :home
+  erb :home, layout: :main #Si el lo nombramos como layout sinatra lo toma por defecto y ya no es necesario poner esto
 end
 
 get '/workshop/:name' do
